@@ -1,0 +1,13 @@
+# Python ki faltu files
+__pycache__/
+*.pyc
+
+# Tumhara Virtual Environment - GitHub pe nahi jana chahiye
+venv/
+
+# Tumhara Local Database - Is me tumhare test wale students hain
+db.sqlite3
+
+# VS Code ki settings
+.vscode/
+

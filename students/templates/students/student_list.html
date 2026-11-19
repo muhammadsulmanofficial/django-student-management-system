@@ -1,0 +1,41 @@
+{% extends 'students/base.html' %}
+
+{% block title %}All Students{% endblock title %}
+
+
+{% block content %}
+    <h1>All Students</h1>
+
+    <button><a href="{% url 'add_student' %}">Add New Student</a></button>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.course }}</td>
+            <td>
+
+                <button><a href="{% url 'update_student' student.id %}">
+                    Edit
+                </a></button>
+
+                <button><a href="{% url 'delete_student' student.id %}">
+                    Delete
+                </a></button>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock content %}
+    

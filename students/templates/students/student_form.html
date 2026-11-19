@@ -1,0 +1,17 @@
+{% extends 'students/base.html' %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form method="POST">
+        {% csrf_token %} {% comment %} # yeah Django ka security feature hai jo cross-site request forgery attacks se bachata hai. Ye token har form submission ke sath bheja jata hai aur server isko verify karta hai. {% endcomment %}
+        {{ form.as_p }}
+
+        <button type="submit">{{ button_text }}</button>
+    </form>
+{% endblock content %}
+    
+
+    
